@@ -27,12 +27,12 @@ async function handleEvent(event){
                 case "!help":
                     await sendMessage(event.id, event.server, event.clientid, `Commands:
 !help -> Shows this message
-!usercount -> Get the amount of people on Omegle
-!uwuify -> Uwuify some text
+!usercount -> Get the exact amount of people on Omegle
+!uwuify -> Uwuify some text, i.e. !uwuify hi im omeglebot
 !disconnect -> Make me disconnect
 
 Wanna talk to the person that made me? DM her on Discord at rose lol#6903!
-You can check out my code at https://github.com/RoseChilds/OmegleBot`);
+You can also check out my code at https://github.com/RoseChilds/OmegleBot`);
                     break;
                 case "!usercount":
                     var status = await getStatus();
@@ -44,7 +44,7 @@ You can check out my code at https://github.com/RoseChilds/OmegleBot`);
                     break;
                 case "!uwuify":
                     if(args.length==0){
-                        return await sendMessage(event.id, event.server, event.clientid, `Give me some text to uwuify in the command, i.e. !uwuify hello i am omeglebot`);
+                        return await sendMessage(event.id, event.server, event.clientid, `When running !uwuify you have to give me some text to uwuify, i.e. !uwuify hello i am omeglebot`);
                     }
                     console.log(args);
                     await sendMessage(event.id, event.server, event.clientid, `Your uwuified text: ${uwuify.uwuify(args.join(" "))}`);
