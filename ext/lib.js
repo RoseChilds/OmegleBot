@@ -46,8 +46,9 @@ You can also check out my code at https://github.com/RoseChilds/OmegleBot`);
                     if(args.length==0){
                         return await sendMessage(event.id, event.server, event.clientid, `When running !uwuify you have to give me some text to uwuify, i.e. !uwuify hello i am omeglebot`);
                     }
-                    console.log(args);
-                    await sendMessage(event.id, event.server, event.clientid, `Your uwuified text: ${uwuify.uwuify(args.join(" "))}`);
+                    var uwu = uwuify.uwuify(args.join(" "));
+                    console.log(`Uwuified text: "${uwu}"`.magenta);
+                    await sendMessage(event.id, event.server, event.clientid, `Your uwuified text: ${uwu}`);
                     break;
                 case "hi":
                 case "hiya":
