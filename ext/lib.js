@@ -234,6 +234,7 @@ async function joinRoom(id, server){
                 });
             }else{
                 console.log(`Stranger disconnected`.red.bold);
+                clearTimeout(messagetimeout);
                 return;
             }
         }
