@@ -126,6 +126,9 @@ async function eventLoop(id, server){
     while(true){
         console.log(`Joining room..`.yellow);
         await joinRoom(id, server);
+        var wait = Math.floor(10000*Math.random());
+        console.log(`Sleeping for ${wait/1000}s..`.yellow);
+        await sleep(wait);
     }
 }
 
@@ -161,9 +164,6 @@ To get a list of my commands, send !help`);
 
 async function joinRoom(id, server){
     clearTimeout(messagetimeout);
-    var wait = Math.floor(10000*Math.random());
-    console.log(`Sleeping for ${wait/1000}s..`.yellow);
-    await sleep(wait);
     var data = await fetch(`${server}/start?caps=recaptcha2,t&firstevents=1&spid=&randid=${id}&lang=en`, {
         "headers": {
             "accept": "application/json",
