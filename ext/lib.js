@@ -31,7 +31,8 @@ async function handleEvent(event){
 !uwuify -> Uwuify some text
 !disconnect -> Make me disconnect
 
-Wanna talk to the person that made me? DM her on Discord at rose lol#6903!`);
+Wanna talk to the person that made me? DM her on Discord at rose lol#6903!
+You can check out my code at https://github.com/RoseChilds/OmegleBot`);
                     break;
                 case "!usercount":
                     var status = await getStatus();
